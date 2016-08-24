@@ -24,7 +24,19 @@
         // this is the function to remove a random letter
         function removeRandomLetter(str) {
             var pos = Math.floor(Math.random() * str.length);
-            return [str.substring(0, pos) + "[  ]" + str.substring(pos + 1), str.charAt(pos)];
+            return [str.substring(0, pos) + "[ ]" + str.substring(pos + 1), str.charAt(pos)];
+        }
+
+        function getAnswer(str)
+        {
+            if(str.indexOf('Y') > -1)
+            {
+                return 'y'
+            }
+            else
+            {
+                return 'n'
+            }
         }
 
         function processCSV(scenarios) {
@@ -45,10 +57,10 @@
                         {"inherit": {"set": "error"}},
                         {
                             "data": {
-                                "negativeKey": [n1[1], n2[1]],
-                                "negativeWord": [n1[0], n2[0]],
-                                "positiveKey": [p1[1], p2[1]],
-                                "positiveWord": [p1[0], p2[0]],
+                                "negativeKey": [n1[1].toLowerCase(), n2[1].toLowerCase()],
+                                "negativeWord": [n1[0].toLowerCase(), n2[0].toLowerCase()],
+                                "positiveKey": [p1[1].toLowerCase(), p2[1].toLowerCase()],
+                                "positiveWord": [p1[0].toLowerCase(), p2[0].toLowerCase()],
                                 "stimulus": '[stimulus]',
                                 "statement": merged[i].Scenario
                             },
@@ -61,8 +73,8 @@
                             "handle": "question",
                             data: {
 
-                                positiveAnswer: merged[i].PositiveQ,
-                                negativeAnswer: merged[i].NegativeQ,
+                                positiveAnswer: getAnswer(merged[i].PositiveQ),
+                                negativeAnswer: getAnswer(merged[i].NegativeQ),
                             },
                             "media": {
                                 "inlineTemplate": "<div>" + merged[i].Questions + "</div>"
@@ -112,9 +124,9 @@
 
                 var scriptData = {
                     display_length: 9,
-                    add_extra_missing_letter:false,
+                    add_extra_missing_letter:true,
                     frag: 'first',
-                    quest: 'mc2',
+                    quest: 'question',
                     sequence: processCSV(results.data),
                 };
 

@@ -659,7 +659,7 @@ define(['pipAPI', 'pipScorer'], function (APIConstructor, Scorer) {
             // After the statement is correctly completed, hide it, and show the question.
             {
                 // Trigger when input handle is "end".
-                conditions: [{type:'inputEquals',value:'askQuestion'}, {type:'globalEquals', property: 'quest', value:'yn'}],
+                conditions: [{type:'inputEquals',value:'askQuestion'}, {type:'globalEquals', property: 'quest', value:'question'}],
                 actions: [
                     {type: 'setGlobalAttr', setter: {state: STATE_ASK_QUESTION}}, // sentence completed, show question.
                     {type:'custom',fn:function(options,eventData){
