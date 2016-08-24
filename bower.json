@@ -1,0 +1,16 @@
+{
+  "name": "r34",
+  "version": "0.0.1",
+  "homepage": "https://github.com/danfunk/PIServer",
+  "authors": [
+    "Dan Funk <daniel.h.funk@gmail.com>"
+  ],
+  "description": "MindTrails",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+      "PIPlayer":"v0.3.15",
+      "requirejs": "~2.1.14",
+      "papaparse":"v4.1.1"
+  }
+}

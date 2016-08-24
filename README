@@ -1,0 +1,13 @@
+
+Testing out how to run PIPlayer scripts that read in CSV Files.
+
+Requirements:
+-------------
+* Node (Server side Javascript - for building the PIPlayer, see http://howtonode.org)
+* Bower (Javascript package management tool - just run "npm install bower -global")
+* An HTTP Server, such as https://www.npmjs.com/package/http-server
+
+Getting started:
+---------------
+1. Run 'bower install'
+2. Fire up a web server.
